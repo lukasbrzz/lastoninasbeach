@@ -9,16 +9,12 @@
             "direccionExacta": null
         },
         "contacto": {
-            "whatsapp": "5491140683010",
+            "whatsapp": "5491156909484",
             "whatsappFlotante": "5491156909484",
             "telefonos": [
                 {
                     "texto": "(011) 15-5690-9484",
                     "tel": "+541156909484"
-                },
-                {
-                    "texto": "(011) 15-4068-3010",
-                    "tel": "+541140683010"
                 }
             ],
             "email": "jfp2605@outlook.com"

@@ -103,19 +103,16 @@ Google Maps.
 ## Datos de contacto y revisión pendiente
 
 El entorno no pudo recuperar `https://lastoninasbeach.com.ar/` (falló el acceso
-de red), así que no se pudo comprobar de forma independiente la vigencia de
-los teléfonos, el correo ni las direcciones. El contacto y las cinco
-ubicaciones del JSON son los datos proporcionados por el usuario. El usuario
-indicó que el WhatsApp principal es `(011) 15-4068-3010`; el botón flotante
-usa `(011) 15-5690-9484`. En una fotografía local anterior figuraba
-`(011) 4572-0609` como segundo número; se reemplazó por el dato más reciente.
+de red), así que no se pudo comprobar de forma independiente la vigencia del
+correo ni las direcciones. El contacto y las cinco ubicaciones del JSON son
+los datos proporcionados por el usuario. Todo el sitio utiliza un único
+WhatsApp: `(011) 15-5690-9484`.
 
 Las direcciones se muestran en el directorio, en el mapa del inicio y en los
 detalles de las unidades. Los enlaces de Google Maps buscan la dirección
 proporcionada, pero conviene comprobar en Google Maps que cada resultado ubique
 correctamente el inmueble. También faltan por confirmar:
 
-- Si el primer celular es efectivamente el WhatsApp comercial.
 - Horarios de check-in/check-out y reglas de convivencia.
 - Si las comodidades inferidas del texto de descripción (parrilla y cochera)
   corresponden a cada unidad.
