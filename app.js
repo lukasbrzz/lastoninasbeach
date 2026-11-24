@@ -326,7 +326,7 @@ function applySiteData() {
   const provincia = state.site.provincia || "Buenos Aires";
   const mapQuery = state.site.ubicacion?.consultaMapa || `${localidad}, ${provincia}`;
   document.title = `${name} · Tu descanso en ${localidad}`;
-  document.querySelectorAll("[data-site-name]").forEach((element) => { element.textContent = name.toLowerCase(); });
+  document.querySelectorAll("[data-site-name]").forEach((element) => { element.textContent = name; });
   document.querySelector("#site-presentation").textContent =
     state.site.presentacion || "Unidades cómodas y equipadas para compartir la costa en familia o con amigos.";
   document.querySelector("#map-locality").textContent = localidad;

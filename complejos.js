@@ -132,7 +132,7 @@ async function initialize() {
     if (!state.complexes.length) throw new Error("El archivo JSON no contiene complejos.");
     const name = state.site.nombre || "La Comarca";
     document.title = `Complejos · ${name}, ${state.site.localidad || "Las Toninas"}`;
-    document.querySelectorAll("[data-site-name]").forEach((element) => { element.textContent = name.toLowerCase(); });
+    document.querySelectorAll("[data-site-name]").forEach((element) => { element.textContent = name; });
     const phone = whatsappPhone();
     const text = encodeURIComponent(`Hola, quería consultar por un alojamiento en ${state.site.localidad || "Las Toninas"}.`);
     document.querySelector("#complex-whatsapp").href = `https://wa.me/${phone}?text=${text}`;
