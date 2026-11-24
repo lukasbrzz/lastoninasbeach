@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fbf3e9" />
+    <meta
+      name="description"
+      content="Encontrá tu próximo descanso en Las Toninas. Conocé complejos, dúplex y departamentos con fotos, comodidades y contacto directo."
+    />
+    <title>La Comarca · Tu descanso en Las Toninas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="La Comarca, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 42 42" fill="none">
+            <path d="M5 27.5c5.2-4.1 10.4-4.1 15.6 0 5.2 4.1 10.4 4.1 16.4-.2" />
+            <path d="M8 33c4.3-3.1 8.6-3.1 12.9 0 4.3 3.1 8.6 3.1 13.1.1" />
+            <path d="M21 5v13m-5-8 5-5 5 5" />
+          </svg>
+        </span>
+        <span class="brand-copy"><strong data-site-name>la comarca</strong><small>LAS TONINAS · COSTA ATLÁNTICA</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegación principal">
+        <a href="#alojamientos">Alojamientos</a>
+        <a href="./complejos.html">Complejos</a>
+        <a href="#planes">Qué hacer</a>
+        <a href="#nosotros">La experiencia</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a class="nav-cta" href="#contacto">Consultar <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> UN LUGAR PARA BAJAR EL RITMO</p>
+          <h1>El mar cerca.<br /><em>Vos, en pausa.</em></h1>
+          <p class="hero-description">
+            Días de playa, sobremesas largas y ese descanso que estabas necesitando.
+            Encontrá el espacio ideal para disfrutar Las Toninas a tu manera.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#alojamientos">Encontrá tu alojamiento <span aria-hidden="true">↓</span></a>
+            <a class="text-link hero-complex-link" href="./complejos.html">Explorar por complejo <span aria-hidden="true">↗</span></a>
+            <span class="hero-note"><span class="note-icon" aria-hidden="true">✳</span> Unidades para cada plan</span>
+          </div>
+          <div class="hero-footnote"><span>01</span><span class="footnote-line"></span><span>LAS TONINAS, BUENOS AIRES</span></div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-image" src="./imagenes/uploads/1781181826522.jpg" alt="Espacio luminoso de uno de los alojamientos" fetchpriority="high" />
+          <div class="hero-image-tint"></div>
+          <div class="hero-stamp"><span>UN DESCANSO</span><strong>a tu ritmo</strong><i aria-hidden="true">✳</i></div>
+          <div class="hero-caption"><span class="caption-line"></span><span>Tu próxima escapada empieza acá</span></div>
+          <div class="hero-floating-card"><span class="floating-icon" aria-hidden="true">⌁</span><span><strong>La costa te espera</strong><small>Las Toninas, Buenos Aires</small></span></div>
+        </div>
+      </section>
+
+      <section class="intro-strip" id="nosotros" aria-label="Sobre La Comarca">
+        <div class="intro-label"><span class="intro-sun" aria-hidden="true">✳</span><span>LA COMARCA<br />EN LAS TONINAS</span></div>
+        <p id="site-presentation">Unidades cómodas y equipadas para compartir la costa en familia o con amigos. Elegí la que mejor va con tu viaje.</p>
+        <a href="#alojamientos" class="text-link">Conocé los alojamientos <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="complex-showcase section-wrap" aria-labelledby="complex-showcase-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DESCUBRÍ NUESTROS ESPACIOS</p>
+            <h2 id="complex-showcase-title">Elegí tu complejo</h2>
+          </div>
+          <a class="text-link" href="./complejos.html">Ver todos los complejos <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="complex-showcase-grid" id="complex-showcase-grid"></div>
+      </section>
+
+      <section class="catalog section-wrap" id="alojamientos">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">DESCANSO A TU MEDIDA</p>
+            <h2>Encontrá tu lugar</h2>
+          </div>
+          <p class="section-lead">Explorá las opciones y elegí el espacio para tus próximos días junto al mar.</p>
+        </div>
+
+        <div class="filter-panel" aria-label="Filtros de alojamientos">
+          <div class="filter-intro"><span class="filter-symbol" aria-hidden="true">⌕</span><span><strong>Tu estadía ideal</strong><small>Filtrá y encontrá tu lugar</small></span></div>
+          <label class="filter-field">
+            <span>BUSCAR POR COMPLEJO</span>
+            <select id="filter-complex"><option value="">Todos los complejos</option></select>
+          </label>
+          <label class="filter-field">
+            <span>HUÉSPEDES</span>
+            <select id="filter-capacity">
+              <option value="0">Cualquier capacidad</option>
+              <option value="2">2 personas o más</option>
+              <option value="4">4 personas o más</option>
+              <option value="6">6 personas o más</option>
+              <option value="8">8 personas o más</option>
+            </select>
+          </label>
+          <label class="filter-field">
+            <span>COMODIDADES</span>
+            <select id="filter-amenity">
+              <option value="">Todas las comodidades</option>
+              <option value="wifi">Wi-Fi</option>
+              <option value="parrilla">Parrilla / quincho</option>
+              <option value="cochera">Cochera</option>
+              <option value="mascotas">Acepta mascotas</option>
+            </select>
+          </label>
+          <button class="clear-filters" id="clear-filters" type="button">Limpiar <span aria-hidden="true">↺</span></button>
+        </div>
+
+        <div class="results-bar">
+          <p id="results-count" aria-live="polite">Cargando alojamientos…</p>
+          <span class="results-order">LAS TONINAS <span aria-hidden="true">·</span> COSTA ATLÁNTICA</span>
+        </div>
+        <div class="unit-grid" id="unit-grid" aria-live="polite"></div>
+        <div class="show-more-wrap">
+          <button class="button button-outline" id="show-more-units" type="button" aria-expanded="false" hidden>Ver más alojamientos</button>
+        </div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span aria-hidden="true">⌕</span><h3>No encontramos opciones con esos filtros</h3>
+          <p>Probá con otros criterios o limpiá la búsqueda.</p>
+          <button class="button button-dark" type="button" id="empty-clear">Limpiar filtros</button>
+        </div>
+      </section>
+
+      <section class="experience-band">
+        <div class="experience-image">
+          <img src="./imagenes/principal/respiro.jpeg" alt="Un respiro cerca del mar en La Comarca" loading="lazy" />
+          <span class="image-index">UN LUGAR PARA COMPARTIR · 02/04</span>
+        </div>
+        <div class="experience-copy">
+          <p class="eyebrow">UN RESPIRO CERCA DEL MAR</p>
+          <h2>Lo simple también<br /><em>se vuelve especial.</em></h2>
+          <p>Un patio al aire libre, una charla que se alarga, la playa a unas cuadras. Cada alojamiento tiene su propia forma de hacerte sentir de vacaciones.</p>
+          <a class="text-link" href="#alojamientos">Elegí cómo querés descansar <span aria-hidden="true">↗</span></a>
+          <span class="experience-decoration" aria-hidden="true">✳</span>
+        </div>
+      </section>
+
+      <section class="plans-section" id="planes">
+        <section class="skating-section section-wrap" id="patin" aria-labelledby="skating-title">
+          <div class="skating-mark" aria-hidden="true">✳</div>
+          <div class="skating-copy">
+            <p class="eyebrow">VENÍ A COMPETIR, NOSOTROS TE ACOMPAÑAMOS</p>
+            <h2 id="skating-title">Competencia de <em>Patín Artístico</em></h2>
+            <p>¿Viajás con tu equipo? Recibimos contingentes que participan en torneos de patín artístico. Consultanos por alojamiento y tarifas especiales para el grupo.</p>
+            <div class="skating-actions">
+              <a class="button button-dark" id="skating-whatsapp" href="https://wa.me/?text=Hola%2C%20viajo%20a%20un%20torneo%20de%20pat%C3%ADn%20art%C3%ADstico%20y%20quer%C3%ADa%20consultar%20por%20alojamiento%20y%20tarifas%20para%20el%20grupo." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="skating-gallery" aria-label="Fotos de patín artístico">
+            <figure class="skating-photo"><img class="local-feature-photo" src="./imagenes/principal/patin1.jpg" alt="Patín artístico, foto 1" loading="lazy" /></figure>
+            <figure class="skating-photo"><img class="local-feature-photo" src="./imagenes/principal/patin2.jpg" alt="Patín artístico, foto 2" loading="lazy" /></figure>
+            <figure class="skating-photo"><img class="local-feature-photo" src="./imagenes/principal/patin3.jpg" alt="Patín artístico, foto 3" loading="lazy" /></figure>
+          </div>
+        </section>
+
+        <section class="tourism-section section-wrap" id="turismo" aria-labelledby="tourism-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">UN POCO MÁS PARA DISFRUTAR</p>
+              <h2 id="tourism-title">Conocé Las Toninas</h2>
+            </div>
+            <p class="section-lead">Sumá paseos y momentos locales a tus días de playa.</p>
+          </div>
+          <div class="tourism-grid">
+            <article class="tourism-card">
+              <a class="tourism-map" href="https://www.google.com/maps/search/?api=1&query=Anfiteatro+Las+Toninas+Buenos+Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver fotos y ubicación del Anfiteatro en Google Maps">
+                <img class="local-feature-photo" src="./imagenes/principal/teatro.png" alt="Anfiteatro de Las Toninas" loading="lazy" />
+                <span class="tourism-map-link">FOTOS Y UBICACIÓN EN GOOGLE MAPS <span aria-hidden="true">↗</span></span>
+              </a>
+              <div class="tourism-copy">
+                <p class="tourism-kicker">CULTURA · AL AIRE LIBRE</p>
+                <h3>Anfiteatro</h3>
+                <p>Un espacio para encontrarse y disfrutar actividades de la comunidad. Consultá la agenda local durante tu visita.</p>
+              </div>
+            </article>
+            <article class="tourism-card">
+              <a class="tourism-map" href="https://www.google.com/maps/search/?api=1&query=Carnavales+Las+Toninas+Buenos+Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver fotos y ubicación de los carnavales de Las Toninas en Google Maps">
+                <img class="local-feature-photo" src="./imagenes/principal/carnaval.png" alt="Carnavales de Las Toninas" loading="lazy" />
+                <span class="tourism-map-link">FOTOS Y UBICACIÓN EN GOOGLE MAPS <span aria-hidden="true">↗</span></span>
+              </a>
+              <div class="tourism-copy">
+                <p class="tourism-kicker">FIESTA · EN TEMPORADA</p>
+                <h3>Carnavales</h3>
+                <p>Música, color y celebración para compartir en familia. Las fechas y actividades pueden variar cada año: consultá la agenda local.</p>
+              </div>
+            </article>
+            <article class="tourism-card">
+              <a class="tourism-map" href="https://www.google.com/maps/search/?api=1&query=Laberinto+Natural+Las+Toninas+Buenos+Aires" target="_blank" rel="noopener noreferrer" aria-label="Ver fotos y ubicación del Laberinto Natural en Google Maps">
+                <img class="local-feature-photo" src="./imagenes/principal/laberinto.png" alt="Laberinto Natural de Las Toninas" loading="lazy" />
+                <span class="tourism-map-link">FOTOS Y UBICACIÓN EN GOOGLE MAPS <span aria-hidden="true">↗</span></span>
+              </a>
+              <div class="tourism-copy">
+                <p class="tourism-kicker">PASEO · NATURALEZA</p>
+                <h3>Laberinto Natural</h3>
+                <p>Un paseo distinto para sumar naturaleza y un rato de aventura a la escapada. Consultá horarios y disponibilidad antes de ir.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="location-section section-wrap" id="ubicacion">
+        <div class="location-copy">
+          <p class="eyebrow">UN DESTINO PARA DISFRUTAR</p>
+          <h2>Nos encontramos<br />en <em>Las Toninas.</em></h2>
+          <p>Encontrá cada alojamiento y abrí su ubicación en Google Maps.</p>
+          <ul class="complex-map-links" id="complex-map-links" aria-label="Ubicaciones de los complejos"></ul>
+          <a class="button button-outline" id="map-link" href="https://www.google.com/maps/search/?api=1&query=Las+Toninas%2C+Buenos+Aires" target="_blank" rel="noopener noreferrer">Explorar la zona <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="map-card">
+          <iframe
+            title="Mapa de Las Toninas, Buenos Aires"
+            src="https://maps.google.com/maps?q=Las%20Toninas%2C%20Buenos%20Aires&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="map-label"><span class="map-pin" aria-hidden="true">⌖</span><span><strong id="map-locality">Las Toninas</strong><small>Partido de La Costa · Buenos Aires</small></span></div>
+        </div>
+      </section>
+
+      <section class="contact-banner" id="contacto">
+        <div class="contact-mark" aria-hidden="true">✳</div>
+        <div><p class="eyebrow">TU PRÓXIMA ESCAPADA</p><h2>¿Lo imaginamos juntos?</h2><p>Escribinos y consultá disponibilidad, tarifas y detalles de cada alojamiento.</p><div class="contact-methods" id="contact-methods" aria-label="Datos de contacto"></div></div>
+        <a class="button button-light" id="general-whatsapp" href="https://wa.me/?text=Hola%2C%20quer%C3%ADa%20consultar%20por%20un%20alojamiento%20en%20Las%20Toninas." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand footer-brand" href="#inicio">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 27.5c5.2-4.1 10.4-4.1 15.6 0 5.2 4.1 10.4 4.1 16.4-.2" /><path d="M8 33c4.3-3.1 8.6-3.1 12.9 0 4.3 3.1 8.6 3.1 13.1.1" /><path d="M21 5v13m-5-8 5-5 5 5" /></svg></span>
+          <span class="brand-copy"><strong data-site-name>la comarca</strong><small>LAS TONINAS · COSTA ATLÁNTICA</small></span>
+        </a>
+        <span class="footer-caption">Un lugar para descansar, cerca del mar.</span>
+        <a class="footer-top" href="#inicio">VOLVER ARRIBA <span aria-hidden="true">↑</span></a>
+      </div>
+      <div class="footer-credit">
+        <span>Desarrollado por <strong>Lucas Britez</strong></span>
+        <a href="https://wa.me/549112376067?text=Hola%2C%20quiero%20crear%20mi%20sitio%20web." target="_blank" rel="noopener noreferrer">
+          ¿Querés crear tu sitio web? Hablemos por WhatsApp <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </footer>
+
+    <dialog class="unit-dialog" id="unit-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar detalle">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <a class="floating-whatsapp" id="floating-whatsapp" href="https://wa.me/5491156909484" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.47 15.03L2 22l5.13-1.34A9.93 9.93 0 1 0 12.04 2Zm0 18.1c-1.5 0-2.97-.4-4.24-1.17l-.3-.18-3.05.8.81-2.98-.2-.31A8.17 8.17 0 1 1 12.04 20.1Zm4.49-6.12c-.25-.12-1.5-.74-1.73-.82-.23-.08-.4-.12-.56.12-.17.25-.65.82-.8.99-.14.16-.29.18-.54.06-.25-.12-1.06-.39-2.02-1.24-.75-.67-1.25-1.5-1.4-1.75-.15-.25-.02-.38.11-.5.11-.1.25-.28.37-.42.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.87-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08s.9 2.42 1.02 2.59c.13.16 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.52.6.19 1.15.16 1.58.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.48-.29Z" /></svg>
+    </a>
+  </body>
+</html>
