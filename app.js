@@ -1,6 +1,6 @@
 const DATA_URL = "./imagenes/data.json";
 const INITIAL_UNIT_LIMIT = 3;
-const state = { site: {}, units: [], complexes: [], cardImages: new Map(), activeUnit: null, activePhoto: 0, showAllUnits: false };
+const state = { site: {}, units: [], complexes: [], heroSlides: [], heroSlideIndex: 0, cardImages: new Map(), activeUnit: null, activePhoto: 0, showAllUnits: false };
 
 const elements = {
   grid: document.querySelector("#unit-grid"),
@@ -33,6 +33,34 @@ function resolveImagePath(path) {
     .replace(/^\.\/+/, "")
     .replace(/^\/+/, "");
   return `./imagenes/${relative}`;
+}
+
+function showHeroSlide(index) {
+  if (!state.heroSlides.length) return;
+  state.heroSlideIndex = (index + state.heroSlides.length) % state.heroSlides.length;
+  const slide = state.heroSlides[state.heroSlideIndex];
+  const image = document.querySelector(".hero-image");
+  image.src = resolveImagePath(slide.imagen_principal);
+  image.alt = `Entrada de ${slide.nombre}`;
+  document.querySelector("#hero-slide-name").textContent = slide.nombre;
+  document.querySelector("#hero-slide-index").textContent = String(state.heroSlideIndex + 1).padStart(2, "0");
+  document.querySelectorAll("[data-hero-slide]").forEach((button, buttonIndex) => {
+    button.setAttribute("aria-current", String(buttonIndex === state.heroSlideIndex));
+  });
+}
+
+function renderHeroCarousel() {
+  state.heroSlides = state.complexes.filter((complex) => complex.imagen_principal);
+  const controls = document.querySelector(".hero-carousel-controls");
+  if (!state.heroSlides.length) {
+    controls.hidden = true;
+    return;
+  }
+  const dots = document.querySelector("#hero-carousel-dots");
+  dots.innerHTML = state.heroSlides
+    .map((slide, index) => `<button type="button" data-hero-slide="${index}" aria-label="Mostrar foto de ${escapeHTML(slide.nombre)}" aria-current="false"></button>`)
+    .join("");
+  showHeroSlide(0);
 }
 
 function isYes(value) {
@@ -348,23 +376,7 @@ function applySiteData() {
   const floatingPhone = String(state.site.contacto?.whatsappFlotante ?? "").replace(/\D/g, "");
   const floatingMessage = encodeURIComponent("Hola, quería consultar por un alojamiento en Las Toninas.");
   document.querySelector("#floating-whatsapp").href = `https://wa.me/${floatingPhone}?text=${floatingMessage}`;
-  const mainPhoto = state.complexes.find((complex) => complex.nombre === "Complejo 1")?.imagen_principal;
-  const firstUnitPhoto = state.units.find((unit) => unit.imagenes?.length)?.imagenes[0];
-  const heroPhoto = mainPhoto || firstUnitPhoto;
-  if (heroPhoto) {
-    const heroImage = document.querySelector(".hero-image");
-    const fallbackPhoto = mainPhoto ? firstUnitPhoto : null;
-    heroImage.dataset.fallbackSrc = fallbackPhoto ? resolveImagePath(fallbackPhoto) : "";
-    heroImage.addEventListener("error", () => {
-      if (heroImage.dataset.fallbackSrc && !heroImage.dataset.fallbackApplied) {
-        heroImage.dataset.fallbackApplied = "true";
-        heroImage.src = heroImage.dataset.fallbackSrc;
-        heroImage.alt = "Espacio de uno de los alojamientos";
-      }
-    });
-    heroImage.src = resolveImagePath(heroPhoto);
-    heroImage.alt = mainPhoto ? "Entrada del Complejo 1" : "Espacio de uno de los alojamientos";
-  }
+  renderHeroCarousel();
 }
 
 function wireEvents() {
@@ -398,6 +410,15 @@ function wireEvents() {
   }, true);
   elements.clear.addEventListener("click", setFiltersToDefault);
   document.querySelector("#empty-clear").addEventListener("click", setFiltersToDefault);
+  document.querySelector(".hero-carousel-controls").addEventListener("click", (event) => {
+    const step = event.target.closest("[data-hero-step]");
+    if (step) {
+      showHeroSlide(state.heroSlideIndex + Number(step.dataset.heroStep));
+      return;
+    }
+    const dot = event.target.closest("[data-hero-slide]");
+    if (dot) showHeroSlide(Number(dot.dataset.heroSlide));
+  });
   elements.grid.addEventListener("click", (event) => {
     const openButton = event.target.closest("[data-open-unit]");
     if (openButton) {

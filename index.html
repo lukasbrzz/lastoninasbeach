@@ -46,25 +46,27 @@
     <main>
       <section class="hero" id="inicio">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> UN LUGAR PARA BAJAR EL RITMO</p>
-          <h1>El mar cerca.<br /><em>Vos, en pausa.</em></h1>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> ALOJAMIENTOS EN LAS TONINAS</p>
+          <h1 data-site-name>La Comarca</h1>
+          <p class="hero-tagline">Tu lugar para descansar junto al mar.</p>
           <p class="hero-description">
-            Días de playa, sobremesas largas y ese descanso que estabas necesitando.
-            Encontrá el espacio ideal para disfrutar Las Toninas a tu manera.
+            Encontrá el espacio ideal para compartir la costa y disfrutar Las Toninas a tu manera.
           </p>
           <div class="hero-actions">
             <a class="button button-dark" href="#alojamientos">Encontrá tu alojamiento <span aria-hidden="true">↓</span></a>
             <a class="text-link hero-complex-link" href="./complejos.html">Explorar por complejo <span aria-hidden="true">↗</span></a>
-            <span class="hero-note"><span class="note-icon" aria-hidden="true">✳︎</span> Unidades para cada plan</span>
           </div>
-          <div class="hero-footnote"><span>01</span><span class="footnote-line"></span><span>LAS TONINAS, BUENOS AIRES</span></div>
+          <div class="hero-footnote"><span id="hero-slide-index">01</span><span class="footnote-line"></span><span>LAS TONINAS, BUENOS AIRES</span></div>
         </div>
-        <div class="hero-visual">
-          <img class="hero-image" src="./imagenes/uploads/1781181826522.jpg" alt="Espacio luminoso de uno de los alojamientos" fetchpriority="high" />
+        <div class="hero-visual" role="group" aria-roledescription="carrusel" aria-label="Fotos de las entradas de los complejos">
+          <img class="hero-image" src="./imagenes/principal/1.jpg" alt="Entrada de Complejo 1" fetchpriority="high" />
           <div class="hero-image-tint"></div>
-          <div class="hero-stamp"><span>UN DESCANSO</span><strong>a tu ritmo</strong><i aria-hidden="true">✳︎</i></div>
-          <div class="hero-caption"><span class="caption-line"></span><span>Tu próxima escapada empieza acá</span></div>
-          <div class="hero-floating-card"><span class="floating-icon" aria-hidden="true">⌁</span><span><strong>La costa te espera</strong><small>Las Toninas, Buenos Aires</small></span></div>
+          <div class="hero-caption"><span class="caption-line"></span><span id="hero-slide-name" aria-live="polite" aria-atomic="true">Complejo 1</span></div>
+          <div class="hero-carousel-controls">
+            <button type="button" data-hero-step="-1" aria-label="Foto anterior">←</button>
+            <div class="hero-carousel-dots" id="hero-carousel-dots" role="group" aria-label="Elegir foto"></div>
+            <button type="button" data-hero-step="1" aria-label="Foto siguiente">→</button>
+          </div>
         </div>
       </section>
 
